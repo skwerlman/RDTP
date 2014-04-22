@@ -1,0 +1,2 @@
+print(textutils.serialize(rdtp.send(64, "00", "text", "ls /rom/apis/", "TestClient01", os.getComputerID())))
+

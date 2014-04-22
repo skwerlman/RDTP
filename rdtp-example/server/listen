@@ -1,0 +1,19 @@
+local label = "TestServer01"
+local cid = os.getComputerID()
+while true do
+  local id, msg = rdtp.receive()
+  if not id then
+    error("Ack! Something's wrong!")
+  end
+  print("CODE: "..msg.code)
+  print("FORMAT: "..msg.format)
+  print("DATA: "..msg.data)
+  print("LABEL: "..msg.label)
+  print("SRCID: "..tostring(msg.srcid))
+  print()
+  sleep(6)
+  rdtp.replyTo(id, "01", "text", "RESPWAIT", label, cid)
+  sleep(6)
+  rdtp.replyTo(id, "0a", "text", "RESPNODATA", label, cid)
+end
+
