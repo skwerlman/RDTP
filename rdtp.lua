@@ -1,10 +1,13 @@
-function noCustom(m)
+local function noCustom(m)
   error("No custom code handler has been defined",0)
 end
 
 -- Globals
 version = "RDTP alpha r3"
 author = "skwerlman"
+contributors = {
+  "Andy73"
+}
 customRef = noCustom -- use rdtp.setCustomHandler(function) to define a handler for custom CODEs
 debug = false
 local depth = -2
