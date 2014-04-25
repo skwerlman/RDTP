@@ -1,4 +1,3 @@
-
 -- WARNING! RDTPs DOES NOT AUTOMATICALLY SECURE
 -- YOUR DATA! It is intended as a standardized means
 -- for sending encrypted information over rednet.
@@ -15,7 +14,7 @@ end
 -- Globals
 version = "RDTPs alpha r3"
 author = "skwerlman"
-coautors = {
+contributors = {
   "Andy73"
 }
 customRef = noCustom -- use rdtp.setCustomHandler() to define a handler for custom CODEs
