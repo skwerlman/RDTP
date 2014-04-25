@@ -1,20 +1,23 @@
 
 -- WARNING! RDTPs DOES NOT AUTOMATICALLY SECURE
--- YOUR DATA! It is intended as a standarized means
+-- YOUR DATA! It is intended as a standardized means
 -- for sending encrypted information over rednet.
 -- YOU MUST ENCYPT YOUR INFO FIRST!
--- I personally reccomend Immibis' Peripherals,
+-- I personally recommend Immibis' Peripherals,
 -- because it gives you full access to all the
 -- encryption algorithms available to the JVM.
 -- Link: http://www.computercraft.info/forums2/index.php?/topic/3728-mc-164-cc-158-immibiss-peripherals/
 
-function noCustom(m)
+local function noCustom(m)
   error("No custom code handler has been defined",0)
 end
 
 -- Globals
 version = "RDTPs alpha r3"
 author = "skwerlman"
+coautors = {
+  "Andy73"
+}
 customRef = noCustom -- use rdtp.setCustomHandler() to define a handler for custom CODEs
 debug = false
 local depth = -2

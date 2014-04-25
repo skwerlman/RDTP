@@ -1,8 +1,25 @@
-if fs.exists("rdtp") then
-  os.loadAPI("rdtp")
+local function loadAPI(path) -- Thanks to theoriginalbit for this loadAPI replacer
+  local name = string.match(fs.getName(path), '(%a+)%.?.-')
+  local env = setmetatable({}, { __index = _G })
+  local func, err = loadfile(path)
+  if not func then
+    return false, printError(err)
+  end
+  setfenv(func, env)
+  func()
+  local api = {}
+  for k,v in pairs(env) do
+    api[k] = v
+  end
+  _G[name] = api
+  return true
 end
-if fs.exists("rdtps") then
-  os.loadAPI("rdtps")
+
+if fs.exists("rdtp.lua") then
+  loadAPI("rdtp")
+end
+if fs.exists("rdtps.lua") then
+  loadAPI("rdtps")
 end
 if not rdtp.version then
   printError("RDTP is not enabled on this machine. Please consider enabling it.")
