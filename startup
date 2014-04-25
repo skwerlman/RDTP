@@ -15,11 +15,11 @@ local function loadAPI(path) -- Thanks to theoriginalbit for this loadAPI replac
   return true
 end
 
-if fs.exists("rdtp.lua") then
-  loadAPI("rdtp")
+if fs.exists("rdtp/rdtp.lua") then
+  loadAPI("rdtp/rdtp.lua")
 end
-if fs.exists("rdtps.lua") then
-  loadAPI("rdtps")
+if fs.exists("rdtp/rdtps.lua") then
+  loadAPI("rdtp/rdtps.lua")
 end
 if not rdtp.version then
   printError("RDTP is not enabled on this machine. Please consider enabling it.")
